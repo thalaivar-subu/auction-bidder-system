@@ -58,8 +58,8 @@ app.get("/", (req, res) => {
 registerBidder();
 
 const startServer = () => {
-  // app.listen(HOST, PORT);
-  app.listen(PORT);
+  app.listen(HOST, PORT);
+  // app.listen(PORT);
   logger.info(`Running on http://${HOST}:${PORT}`);
 };
 

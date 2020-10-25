@@ -3,9 +3,15 @@ import logger from "../utils/logger";
 import { basename, join } from "path";
 import { readdirSync } from "fs";
 import { seq } from "async";
+import {
+  MYSQL_DB,
+  MYSQL_UNAME,
+  MYSQL_PWD,
+  MYSQL_HOST,
+} from "../utils/constants";
 
-const sequelize = new Sequelize("auction_bidder_system", "root", "123456", {
-  host: "localhost",
+const sequelize = new Sequelize(MYSQL_DB, MYSQL_UNAME, MYSQL_PWD, {
+  host: MYSQL_HOST,
   dialect: "mysql",
   logging: (v) => logger.info(v),
 });
