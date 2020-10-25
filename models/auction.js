@@ -21,7 +21,7 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
         field: "bidder_id",
       },
-      bidAmount: {
+      bidAmmount: {
         type: DataTypes.FLOAT(11),
         allowNull: false,
         defaultValue: 0,
@@ -31,7 +31,7 @@ module.exports = function (sequelize, DataTypes) {
         type: DataTypes.INTEGER(11),
         allowNull: false,
         defaultValue: 0,
-        field: "response_ammount",
+        field: "response_time",
       },
       createdAt: {
         type: DataTypes.DATE,

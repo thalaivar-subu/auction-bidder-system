@@ -62,3 +62,22 @@ export const get = (from, selector, defaultVal) => {
 export function isNumber(value) {
   return typeof value === "number" && isFinite(value);
 }
+
+// Promise Timeout
+export const promiseTimeout = (promise, ms) => {
+  // Create a promise that rejects in <ms> milliseconds
+  const timeout = new Promise((resolve, reject) => {
+    const id = setTimeout(() => {
+      clearTimeout(id);
+      reject("Timed out in " + ms + "ms.");
+    }, ms);
+  });
+  // Returns a race between our timeout and the passed in promise
+  return Promise.race([promise, timeout]);
+};
+
+export const getRandomInt = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
