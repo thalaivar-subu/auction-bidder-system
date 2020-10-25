@@ -8,8 +8,10 @@ import uniqid from "uniqid";
 import morgan from "morgan";
 import { PORT, HOST } from "../utils/constants.js";
 import restAPIs from "./api/api";
+import bodyParser from "body-parser";
+import models from "../models";
+
 const app = express();
-const models = require("../models");
 models.sequelize
   .sync({
     force: false,
@@ -36,10 +38,8 @@ app.use(
     );
   })
 );
-// Routes for Exposed Rest API's
-restAPIs(app);
-app.use(express.urlencoded({ limit: "256kb", extended: true }));
-app.use(express.json({ limit: "256kb" }));
+app.use(bodyParser.urlencoded({ limit: "256kb", extended: true }));
+app.use(bodyParser.json({ limit: "256kb" }));
 app.use(middleware);
 app.use((req, res, next) => {
   const { headers: { context } = {}, body } = req;
@@ -48,7 +48,8 @@ app.use((req, res, next) => {
   set("requestBody", body);
   next();
 });
-
+// Routes for Exposed Rest API's
+restAPIs(app);
 app.get("/", (req, res) => {
   res.send("ok");
 });

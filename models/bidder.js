@@ -16,6 +16,11 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
         field: "bidder_id",
       },
+      bidderUrl: {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+        field: "bidder_url",
+      },
       createdAt: {
         type: DataTypes.DATE,
         allowNull: false,

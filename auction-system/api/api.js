@@ -11,7 +11,8 @@ const apis = async (app) => {
   // Register Bidder
   app.post("/register", async (req, res) => {
     const { url } = req.body;
-    registerBidder(url);
+    const { status, data, message } = await registerBidder(url);
+    res.status(status).json(data || message);
   });
 
   // Lists endpoint present in Auction application
