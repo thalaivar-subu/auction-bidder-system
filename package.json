@@ -1,0 +1,41 @@
+{
+  "name": "auctionbiddersystem",
+  "version": "1.0.0",
+  "description": "Consists of 2 systems => Auction & Bidder",
+  "scripts": {
+    "start-auction-system": "node AuctionSystem/server.babel.js",
+    "start-bidder-system": "node BidderSystem/server.babel.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thalaivar-subu/auctionBidderSystem.git"
+  },
+  "author": "Subramanian.VE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thalaivar-subu/auctionBidderSystem/issues"
+  },
+  "homepage": "https://github.com/thalaivar-subu/auctionBidderSystem#readme",
+  "devDependencies": {
+    "@babel/core": "7.12.3",
+    "@babel/plugin-transform-runtime": "7.12.1",
+    "@babel/preset-env": "7.12.1",
+    "@babel/register": "7.12.1",
+    "babel-eslint": "10.1.0",
+    "babel-plugin-module-resolver": "4.0.0",
+    "eslint": "7.12.0",
+    "nodemon": "2.0.6",
+    "prettier": "2.1.2",
+    "sequelize-auto": "0.6.4"
+  },
+  "dependencies": {
+    "axios": "0.21.0",
+    "express": "4.17.1",
+    "express-http-context": "1.2.4",
+    "fast-safe-stringify": "2.0.7",
+    "morgan": "1.10.0",
+    "sequelize": "6.3.5",
+    "uniqid": "5.2.0",
+    "winston": "3.3.3"
+  }
+}
