@@ -3,7 +3,7 @@ Auction and Bidder Systems
 
 AD Request Auction System
 
-Create an auction system which can auction bids and select the winning bid such that it always responds before a specific time interval. 
+Created an auction system which can auction bids and select the winning bid such that it always responds before a specific time interval. 
 
 ![Alt text](images/auction diagram.png?raw=true "Overall Diagram")
 
@@ -33,6 +33,6 @@ Auctioneer should expose following endpoints
 
 All the communication between the parties is expected to be in the form of HTTP requests.
 
-Write a program in any programming language that can simulate the above behaviour, dockerize the application and include a docker compose file. Bidder should be manageable with docker compose file. Once the auctioneer is online it should keep track of registered bidders. When any bidder comes online, it should register itself to the auctioneer and wait for bid requests.
+This Application simulates the above behaviour and  dockerized the application which includes a docker compose file. Bidder is manageable with docker compose file. Once the auctioneer is online it will keep track of registered bidders. When any bidder comes online, it will register itself to the auctioneer and wait for bid requests.
 
 
